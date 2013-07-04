@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = AlbumShuffle::VERSION
   spec.authors       = ["Dan Schuman"]
   spec.email         = ["danschuman@gmail.com"]
-  spec.description   = %q{Shuffles some directories}
-  spec.summary       = %q{Shuffles some directories}
+  spec.summary       = %q{Command line tool to list random music directories}
+  spec.description   = %q{Outputs a list of shuffled music directories. Assumes your music is already organized in a directory-per-album structure.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
