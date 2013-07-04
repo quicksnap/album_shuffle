@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'thor'
+require 'album_shuffle'
+
+class ShuffleExec < Thor
+  class_option :path
+
+  desc "shuffle [COUNT=10]", "Shuffles things and stuff"
+  def shuffle(limit=10)
+    limit = limit.to_i
+
+    shuffleOptions = {
+      folder_limit: limit,
+      base_path: options[:path] ? options[:path] : Dir.pwd
+    }
+
+    shuffler = AlbumShuffle.new(shuffleOptions)
+
+    shuffler.shuffle.each do |dir|
+      puts dir
+    end
+  end
+end
+
+ShuffleExec.start(ARGV)
